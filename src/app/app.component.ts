@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-study';
+  isLarge = true;
 
   setTitle(title: string) {
     this.title = title;
