@@ -1,0 +1,17 @@
+<!-- ngif에 의한 show hide-->
+<p *ngIf="isShow">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi veniam
+  ratione, exercitationem incidunt vel sunt, laboriosam officiis dolore vitae
+  ducimus enim quam quidem perferendis. Ipsum minus temporibus beatae autem
+  repudiandae!
+</p>
+
+<!-- 스타일 바인딩에 의한 show/hide -->
+<p [style.display]="isShow ? 'block' : 'none'">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
+  necessitatibus provident ea facilis corrupti aspernatur obcaecati excepturi
+  atque in aliquid. Delectus reprehenderit facilis iste sequi. Sit itaque est
+  consectetur consequatur.
+</p>
+
+<button (click)="isShow = !isShow">{{ isShow ? "Hide" : "Show" }}</button>
