@@ -7,9 +7,10 @@ import { PropertyComponentComponent } from './component/property-component/prope
 import { TextBuleDirective } from './directive/text-bule.directive';
 import { NgclassComponent } from './component/ngclass/ngclass.component';
 import { NgifComponent } from './component/ngif/ngif.component';
+import { NgforComponent } from './component/ngfor/ngfor.component';
 
 @NgModule({
-  declarations: [AppComponent, PropertyComponentComponent, TextBuleDirective, NgclassComponent, NgifComponent],
+  declarations: [AppComponent, PropertyComponentComponent, TextBuleDirective, NgclassComponent, NgifComponent, NgforComponent],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
