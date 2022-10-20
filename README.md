@@ -36,3 +36,27 @@
 ## 디렉티브
 
 > DOM의 모든것(모양이나 동작)을 관리하기 위한 지시어다.
+
+## @Input
+
+> 부모 컴퍼넌트에서 자식 컴퍼넌트한데 데이터 전달시 사용된다.
+
+### 부모컴퍼넌트
+
+#### html (app.component)
+
+```html javascript angular
+<!-- 부모 컴퍼넌트 -->
+<div class="container">
+  <!-- 자식 컴퍼넌트 선언 -->
+  <app-user-list [users]="users"></app-user-list>
+</div>
+```
+
+#### class
+
+### 자식컴퍼넌트
+
+```html javascript angular
+
+```
