@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="form-inline">
+      <div class="form-group margin">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          #name
+          id="name"
+          class="form-control"
+          placeholder="이름을 입력하세요"
+        />
+
+        <label for="role">Role:</label>
+        <select #role name="role" class="form-control">
+          <option value="Administrator">Administrator</option>
+          <option value="Developer">Developer</option>
+          <option value="Designer">Designer</option>
+        </select>
+        <button
+          type="button"
+          class="btn btn-default"
+          (click)="addUser(name.value, role.value)"
+        >
+          AddUser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <app-user-list [users]="users"></app-user-list>
+  <router-outlet></router-outlet>
+</div>
