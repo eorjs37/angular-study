@@ -28,6 +28,13 @@
     </div>
   </div>
 
-  <app-user-list [users]="users"></app-user-list>
+  <app-user-list [users]="users" (remove)="removeUser($event)"></app-user-list>
+
+  <h1>counter</h1>
+  <app-counter #counter></app-counter>
+  <hr />
+  <button type="button" (click)="toggle()">Toggle Child</button>
+  <button type="button" (click)="changeText()">Change Child`s text</button>
+  <app-child></app-child>
   <router-outlet></router-outlet>
 </div>

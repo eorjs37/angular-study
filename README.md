@@ -147,3 +147,15 @@ export class UserListComponent implements OnInit {
   </div>
 </div>
 ```
+
+## @ViewChild
+
+> 자식 컴퍼넌트에 접근하고 싶을때 사용된다.
+
+#### 자식 컴퍼넌트(child.component.html)
+
+```html
+
+```
+
+## @ViewChildren
