@@ -43,6 +43,31 @@
 
 ### 부모컴퍼넌트
 
+#### typescript(app.component.ts)
+
+```typescript
+import { Component } from "@angular/core";
+import { User } from "./models/user.model";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
+})
+export class AppComponent {
+  //자식 컴퍼넌트와 공유할 상태정보
+  users: User[];
+
+  constructor() {
+    this.users = [
+      new User(1, "Lee", "Administrator"),
+      new User(2, "Baek", "Developer"),
+      new User(3, "Park", "Designer"),
+    ];
+  }
+}
+```
+
 #### html (app.component)
 
 ```html javascript angular
@@ -53,10 +78,72 @@
 </div>
 ```
 
-#### class
-
 ### 자식컴퍼넌트
 
-```html javascript angular
+#### typescript(app.component.ts)
 
+```typescript
+import { Component, Input, OnInit } from "@angular/core";
+import { User } from "src/app/models/user.model";
+
+@Component({
+  selector: "app-user-list",
+  templateUrl: "./user-list.component.html",
+  styleUrls: ["./user-list.component.scss"],
+})
+export class UserListComponent implements OnInit {
+  private _users: User[] = [];
+
+  //역할별 사용자 카운터
+  cntAdmin: number | undefined;
+  cntDeveloper: number | undefined;
+  cntDesigner: number | undefined;
+  //set을 통해 데이터 바인딩할때마다 관련 데이터들을 변경해준다.
+  @Input()
+  set users(users: User[]) {
+    if (!users) {
+      return;
+    }
+
+    this.cntAdmin = users.filter(({ role }) => role === "Administrator").length;
+    this.cntDeveloper = users.filter(({ role }) => role === "Developer").length;
+    this.cntDesigner = users.filter(({ role }) => role === "Designer").length;
+
+    this._users = users;
+  }
+  get users(): User[] {
+    return this._users;
+  }
+}
+```
+
+#### html(user-list.component.html)
+
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.role }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>Admin : {{ cntAdmin }}</p>
+    <p>Developer : {{ cntDeveloper }}</p>
+    <p>Designer : {{ cntDesigner }}</p>
+  </div>
+</div>
 ```

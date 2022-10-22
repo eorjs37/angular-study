@@ -7,8 +7,6 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./user-list.component.scss'],
 })
 export class UserListComponent implements OnInit {
-  //@Input() users: User[] | undefined;
-
   private _users: User[] = [];
 
   //역할별 사용자 카운터
