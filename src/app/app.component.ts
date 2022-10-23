@@ -1,20 +1,36 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { User } from './models/user.model';
 import { ChildComponent } from './component/child/child.component';
+import { Child2Component } from './component/child2/child2.component';
+export interface Checkbox {
+  id: number;
+  label: string;
+  checked: boolean;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @ViewChild(ChildComponent, { static: false }) myChild:
-    | ChildComponent
-    | undefined;
+  @ViewChild(ChildComponent) myChild: ChildComponent | undefined;
   title = 'angular-study';
   isLarge = true;
 
   //자식 컴퍼넌트와 공유할 상태정보
   users: User[];
+
+  checkboxs: Checkbox[] = [
+    { id: 1, label: 'HTML', checked: true },
+    { id: 2, label: 'CSS', checked: false },
+    { id: 3, label: 'Javascript', checked: false },
+  ];
+  active = false;
+
+  @ViewChildren(Child2Component) myChildren:
+    | QueryList<Child2Component>
+    | undefined;
 
   constructor() {
     this.users = [
@@ -52,6 +68,16 @@ export class AppComponent {
     if (this.myChild != undefined) {
       this.myChild.isShow = !this.myChild.isShow;
     }
+  }
+
+  toggle2() {
+    this.active = !this.active;
+
+    this.myChildren?.forEach((child) => {
+      if (child.checkBox != undefined) {
+        child.checkBox.checked = this.active;
+      }
+    });
   }
 
   changeText() {

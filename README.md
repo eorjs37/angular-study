@@ -152,10 +152,157 @@ export class UserListComponent implements OnInit {
 
 > 자식 컴퍼넌트에 접근하고 싶을때 사용된다.
 
-#### 자식 컴퍼넌트(child.component.html)
+### 자식 컴퍼넌트(child.component.html)
+
+#### HTML
 
 ```html
+<div class="par" *ngIf="isShow">{{ contextText }}</div>
+```
 
+#### typescript
+
+```typescript
+import { Component, OnInit } from "@angular/core";
+
+@Component({
+  selector: "app-child",
+  templateUrl: "./child.component.html",
+  styleUrls: ["./child.component.scss"],
+})
+export class ChildComponent implements OnInit {
+  //부모컴퍼넌트가 자식 컴퍼넌트이 뷰를 감추거나 보이기 위해 접근할 프로퍼티
+  public isShow = true;
+  contextText = "Child";
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  changeText(text: string) {
+    this.contextText = text;
+  }
+}
+```
+
+### 부모 컴퍼넌트(app.component.html)
+
+#### HTML
+
+```html
+<button type="button" (click)="toggle()">Toggle Child</button>
+<button type="button" (click)="changeText()">Change Child`s text</button>
+<app-child></app-child>
+```
+
+#### typescript
+
+```typescript
+import { ChildComponent } from "./component/child/child.component";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
+})
+export class AppComponent {
+  @ViewChild(ChildComponent) myChild: ChildComponent | undefined;
+  toggle() {
+    if (this.myChild != undefined) {
+      this.myChild.isShow = !this.myChild.isShow;
+    }
+  }
+
+  changeText() {
+    if (this.myChild != undefined) {
+      this.myChild.contextText = "hello world";
+    }
+  }
+}
 ```
 
 ## @ViewChildren
+
+> 자식컴퍼넌트를 제어하고 싶을때인 것은 @ViewChild이랑 똑같지만  
+> 여러개로 관리 하고 싶을때 사용된다.
+
+### 자식 컴퍼넌트(child2.component.html)
+
+#### HTML
+
+```html
+<input type="checkbox" [id]="checkBox?.id" [checked]="checkBox?.checked" />
+<label [for]="checkBox?.id"> {{ checkBox?.label }} </label>
+```
+
+#### typescript
+
+```typescript
+import { Component, Input, OnInit } from "@angular/core";
+
+import { Checkbox } from "../../app.component";
+@Component({
+  selector: "app-child2",
+  templateUrl: "./child2.component.html",
+  styleUrls: ["./child2.component.scss"],
+})
+export class Child2Component implements OnInit {
+  @Input() checkBox: Checkbox | undefined;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+}
+```
+
+### 부모 컴퍼넌트(app.component.html)
+
+#### HTML
+
+```html
+<div class="container">
+  <h3>Parent</h3>
+  <button type="button" (click)="toggle2()">Toggle Child</button>
+  <div *ngFor="let checkbox of checkboxs">
+    <app-child2 [checkBox]="checkbox"></app-child2>
+  </div>
+</div>
+```
+
+#### typescript
+
+```typescript
+import { Component, QueryList, ViewChildren } from "@angular/core";
+import { Child2Component } from "./component/child2/child2.component";
+
+export interface Checkbox {
+  id: number;
+  label: string;
+  checked: boolean;
+}
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
+})
+export class AppComponent {
+  checkboxs: Checkbox[] = [
+    { id: 1, label: "HTML", checked: true },
+    { id: 2, label: "CSS", checked: false },
+    { id: 3, label: "Javascript", checked: false },
+  ];
+  active = false;
+  @ViewChild(ChildComponent) myChild: ChildComponent | undefined;
+
+  toggle2() {
+    this.active = !this.active;
+
+    this.myChildren?.forEach((child) => {
+      if (child.checkBox != undefined) {
+        child.checkBox.checked = this.active;
+      }
+    });
+  }
+}
+```

@@ -11,9 +11,10 @@ import { NgforComponent } from './component/ngfor/ngfor.component';
 import { UserListComponent } from './component/user-list/user-list.component';
 import { CounterComponent } from './component/counter/counter.component';
 import { ChildComponent } from './component/child/child.component';
+import { Child2Component } from './component/child2/child2.component';
 
 @NgModule({
-  declarations: [AppComponent, PropertyComponentComponent, TextBuleDirective, NgclassComponent, NgifComponent, NgforComponent, UserListComponent, CounterComponent, ChildComponent],
+  declarations: [AppComponent, PropertyComponentComponent, TextBuleDirective, NgclassComponent, NgifComponent, NgforComponent, UserListComponent, CounterComponent, ChildComponent, Child2Component],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

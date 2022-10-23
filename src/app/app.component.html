@@ -36,5 +36,12 @@
   <button type="button" (click)="toggle()">Toggle Child</button>
   <button type="button" (click)="changeText()">Change Child`s text</button>
   <app-child></app-child>
+
+  <h3>Parent</h3>
+  <button type="button" (click)="toggle2()">Toggle Child</button>
+  <div *ngFor="let checkbox of checkboxs">
+    <app-child2 [checkBox]="checkbox"></app-child2>
+  </div>
+
   <router-outlet></router-outlet>
 </div>
