@@ -43,5 +43,18 @@
     <app-child2 [checkBox]="checkbox"></app-child2>
   </div>
 
+  <app-single-content-projection>
+    <strong>single slot</strong><i>content-projection</i>
+  </app-single-content-projection>
+
+  <h1>multi-content-projection</h1>
+
+  <app-multi-content-projection>
+    <header>header</header>
+    <footer>footer content</footer>
+    <section>section</section>
+    <div class="my-class">my class div</div>
+  </app-multi-content-projection>
+
   <router-outlet></router-outlet>
 </div>

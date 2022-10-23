@@ -12,9 +12,24 @@ import { UserListComponent } from './component/user-list/user-list.component';
 import { CounterComponent } from './component/counter/counter.component';
 import { ChildComponent } from './component/child/child.component';
 import { Child2Component } from './component/child2/child2.component';
+import { SingleContentProjectionComponent } from './component/single-content-projection/single-content-projection.component';
+import { MultiContentProjectionComponent } from './component/multi-content-projection/multi-content-projection.component';
 
 @NgModule({
-  declarations: [AppComponent, PropertyComponentComponent, TextBuleDirective, NgclassComponent, NgifComponent, NgforComponent, UserListComponent, CounterComponent, ChildComponent, Child2Component],
+  declarations: [
+    AppComponent,
+    PropertyComponentComponent,
+    TextBuleDirective,
+    NgclassComponent,
+    NgifComponent,
+    NgforComponent,
+    UserListComponent,
+    CounterComponent,
+    ChildComponent,
+    Child2Component,
+    SingleContentProjectionComponent,
+    MultiContentProjectionComponent,
+  ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
