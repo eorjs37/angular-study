@@ -306,3 +306,30 @@ export class AppComponent {
   }
 }
 ```
+
+## ng-content
+
+> vue에서의 slot와 같으며 추상적으로 개발할때 많이 쓰인다. 보통 css가 같으나, 안의 내용물(텍스트)가 다를때 자주 쓰인다. 이렇게 개발할 경우 재활용성이 높다.
+
+#### ng-content 컴퍼넌트(multi-content-projection.component.html)
+
+```html
+<h3>Multi-slot content projection</h3>
+
+<!-- select="태그 또는 css class" -->
+<ng-content select="header"></ng-content>
+<ng-content select="section"></ng-content>
+<ng-content select=".my-class"></ng-content>
+<ng-content select="footer"></ng-content>
+```
+
+#### 부모컴퍼넌트 (app.component.html)
+
+```html
+<app-multi-content-projection>
+  <header>header</header>
+  <footer>footer content</footer>
+  <section>section</section>
+  <div class="my-class">my class div</div>
+</app-multi-content-projection>
+```
