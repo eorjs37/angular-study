@@ -14,6 +14,8 @@ import { ChildComponent } from './component/child/child.component';
 import { Child2Component } from './component/child2/child2.component';
 import { SingleContentProjectionComponent } from './component/single-content-projection/single-content-projection.component';
 import { MultiContentProjectionComponent } from './component/multi-content-projection/multi-content-projection.component';
+import { UserList2Component } from './component/user-list2/user-list2.component';
+import { UserComponent } from './component/user/user.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { MultiContentProjectionComponent } from './component/multi-content-proje
     Child2Component,
     SingleContentProjectionComponent,
     MultiContentProjectionComponent,
+    UserList2Component,
+    UserComponent,
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
