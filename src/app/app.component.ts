@@ -1,10 +1,4 @@
-import {
-  Component,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { User } from './models/user.model';
 import { ChildComponent } from './component/child/child.component';
 import { Child2Component } from './component/child2/child2.component';
@@ -18,12 +12,12 @@ export interface Checkbox {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   @ViewChild(ChildComponent) myChild: ChildComponent | undefined;
   title = 'angular-study';
   isLarge = true;
+  color = 'red';
 
   //자식 컴퍼넌트와 공유할 상태정보
   users: User[];

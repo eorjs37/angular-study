@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { SingleContentProjectionComponent } from './component/single-content-pro
 import { MultiContentProjectionComponent } from './component/multi-content-projection/multi-content-projection.component';
 import { UserList2Component } from './component/user-list2/user-list2.component';
 import { UserComponent } from './component/user/user.component';
+import { TextcolorDirective } from './directive/textcolor.directive';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,9 @@ import { UserComponent } from './component/user/user.component';
     MultiContentProjectionComponent,
     UserList2Component,
     UserComponent,
+    TextcolorDirective,
   ],
-  imports: [FormsModule, BrowserModule, AppRoutingModule],
+  imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
