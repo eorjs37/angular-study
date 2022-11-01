@@ -18,6 +18,7 @@ import { MultiContentProjectionComponent } from './component/multi-content-proje
 import { UserList2Component } from './component/user-list2/user-list2.component';
 import { UserComponent } from './component/user/user.component';
 import { TextcolorDirective } from './directive/textcolor.directive';
+import { TextColorCustomDirective } from './directive/text-color-custom.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TextcolorDirective } from './directive/textcolor.directive';
     UserList2Component,
     UserComponent,
     TextcolorDirective,
+    TextColorCustomDirective,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],

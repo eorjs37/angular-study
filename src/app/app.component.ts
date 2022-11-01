@@ -18,6 +18,8 @@ export class AppComponent {
   title = 'angular-study';
   isLarge = true;
   color = 'red';
+  //라디오 텍스트 컬러
+  radioTextColor: string | undefined;
 
   //자식 컴퍼넌트와 공유할 상태정보
   users: User[];

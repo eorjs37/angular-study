@@ -1,5 +1,9 @@
 # Angular Study
 
+## 명령어 통해 component, directive , service 생성
+
+> ng g component, directive, service --name
+
 ## 프로퍼티 바인딩
 
 > 컴퍼넌트 클래스와 프로퍼티와 템플릿 간의 단방향 데이터 바인딩
@@ -332,4 +336,78 @@ export class AppComponent {
   <section>section</section>
   <div class="my-class">my class div</div>
 </app-multi-content-projection>
+```
+
+## 사용자 정의 어트리뷰트 디렉티브
+
+### 기본(text-bule.directive.ts)
+
+```typescript
+import { Directive, ElementRef, HostListener, Renderer2 } from "@angular/core";
+
+@Directive({
+  selector: "[appTextBule]",
+})
+export class TextBuleDirective {
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  //호스트 요소에서 발생한 mouseenter 이벤트의 핸들러를 정의
+  @HostListener("mouseenter") handleMouseEnter() {
+    this.textColor("blue");
+  }
+
+  //호스트 요소에서 발생한 mouseleave 이벤트의 핸들러를 정의
+  @HostListener("mouseleave") handleMouseLeave() {
+    this.textColor(null);
+  }
+
+  private textColor(color: string | null) {
+    this.renderer.setStyle(this.el.nativeElement, "color", color);
+  }
+}
+```
+
+```html
+<h3 appTextBule>Parent</h3>
+```
+
+### @Input 데이터 바인딩(text-color.directive.ts)
+
+```typescript
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Renderer2,
+} from "@angular/core";
+
+@Directive({
+  selector: "[appTextcolor]",
+})
+export class TextcolorDirective {
+  //호스트 요소에서 프로퍼티 바인딩한 값을 전달받는다.
+  @Input() color: string | undefined;
+
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  @HostListener("mouseenter") handleMouseEnter() {
+    console.log("mouseenter");
+    console.log(this.color);
+
+    this.textColor(this.color);
+  }
+
+  @HostListener("mouseleave") handleMouseLeave() {
+    this.textColor(null);
+  }
+
+  private textColor(color: string | null | undefined) {
+    this.renderer.setStyle(this.el.nativeElement, "color", color);
+  }
+}
+```
+
+```html
+<p appTextcolor [color]="color">ddd</p>
 ```
