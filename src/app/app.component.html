@@ -69,10 +69,22 @@
 
   <h4>텍스트의 컬러를 선택하세요</h4>
   <div>
-    <input type="radio" name="colors" />Red
-    <input type="radio" name="colors" />Blue
-    <input type="radio" name="colors" />Green
+    <input type="radio" name="colors" (click)="radioTextColor = 'red'" />Red
+    <input type="radio" name="colors" (click)="radioTextColor = 'blue'" />Blue
+    <input type="radio" name="colors" (click)="radioTextColor = 'green'" />Green
   </div>
+
+  <p appTextColorCustom [textColor]="radioTextColor" defaultColor="violet">
+    Text Color
+  </p>
+
+  <!-- {{ condition }}
+  <h2 appMgNgIf [myNgIf]="condition">ddd</h2> -->
+  <!-- <h2 appMgNgIf [myNgIf]="condition">Hello {{ name }}</h2> -->
+
+  <!-- <h2 appMgNgIf *myNgIf="condition">Hello {{ name }}</h2> -->
+
+  <button (click)="condition = !condition">Click</button>
 
   <router-outlet></router-outlet>
 </div>

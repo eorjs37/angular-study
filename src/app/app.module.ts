@@ -19,6 +19,7 @@ import { UserList2Component } from './component/user-list2/user-list2.component'
 import { UserComponent } from './component/user/user.component';
 import { TextcolorDirective } from './directive/textcolor.directive';
 import { TextColorCustomDirective } from './directive/text-color-custom.directive';
+import { MgNgIfDirective } from './directive/mg-ng-if.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TextColorCustomDirective } from './directive/text-color-custom.directiv
     UserComponent,
     TextcolorDirective,
     TextColorCustomDirective,
+    MgNgIfDirective,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],

@@ -24,6 +24,10 @@ export class AppComponent {
   //자식 컴퍼넌트와 공유할 상태정보
   users: User[];
 
+  //myngif data
+  condition = false;
+  name = 'Lee';
+
   checkboxs: Checkbox[] = [
     { id: 1, label: 'HTML', checked: true },
     { id: 2, label: 'CSS', checked: false },
