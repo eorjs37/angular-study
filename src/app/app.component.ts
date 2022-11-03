@@ -28,6 +28,12 @@ export class AppComponent {
   condition = false;
   name = 'Lee';
 
+  //todat
+  today = new Date();
+
+  //value
+  value: string = '';
+
   checkboxs: Checkbox[] = [
     { id: 1, label: 'HTML', checked: true },
     { id: 2, label: 'CSS', checked: false },

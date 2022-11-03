@@ -20,6 +20,7 @@ import { UserComponent } from './component/user/user.component';
 import { TextcolorDirective } from './directive/textcolor.directive';
 import { TextColorCustomDirective } from './directive/text-color-custom.directive';
 import { MgNgIfDirective } from './directive/mg-ng-if.directive';
+import { ReversePipe } from './pipe/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MgNgIfDirective } from './directive/mg-ng-if.directive';
     TextcolorDirective,
     TextColorCustomDirective,
     MgNgIfDirective,
+    ReversePipe,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],

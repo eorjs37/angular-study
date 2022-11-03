@@ -78,13 +78,22 @@
     Text Color
   </p>
 
-  <!-- {{ condition }}
-  <h2 appMgNgIf [myNgIf]="condition">ddd</h2> -->
-  <!-- <h2 appMgNgIf [myNgIf]="condition">Hello {{ name }}</h2> -->
-
-  <!-- <h2 appMgNgIf *myNgIf="condition">Hello {{ name }}</h2> -->
-
   <button (click)="condition = !condition">Click</button>
+
+  <h1>
+    {{ today }}
+  </h1>
+
+  <h2>
+    {{ today | date }}
+  </h2>
+
+  <h2>
+    {{ today | date: "y년 MM월 dd일 HH시 mm분 ss초" }}
+  </h2>
+
+  <input type="text" [(ngModel)]="value" />
+  <p>{{ value | reverse }}</p>
 
   <router-outlet></router-outlet>
 </div>
