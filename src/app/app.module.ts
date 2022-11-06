@@ -23,6 +23,7 @@ import { MgNgIfDirective } from './directive/mg-ng-if.directive';
 import { ReversePipe } from './pipe/reverse.pipe';
 import { TodoComponent } from './component/todo/todo.component';
 import { LimitPipe } from './pipe/limit.pipe';
+import { ParentComponent } from './component/parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { LimitPipe } from './pipe/limit.pipe';
     ReversePipe,
     TodoComponent,
     LimitPipe,
+    ParentComponent,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],

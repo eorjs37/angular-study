@@ -7,6 +7,7 @@ import { NgifComponent } from './component/ngif/ngif.component';
 import { NgforComponent } from './component/ngfor/ngfor.component';
 import { UserListComponent } from './component/user-list/user-list.component';
 import { CounterComponent } from './component/counter/counter.component';
+import { ParentComponent } from './component/parent/parent.component';
 const routes: Routes = [
   { path: 'property-component', component: PropertyComponentComponent },
   { path: 'ngclass', component: NgclassComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'ngfor', component: NgforComponent },
   { path: 'userListComponent', component: UserListComponent },
   { path: 'counter', component: CounterComponent },
+  { path: 'parent', component: ParentComponent },
 ];
 
 @NgModule({
