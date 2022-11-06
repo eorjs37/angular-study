@@ -1,0 +1,13 @@
+<input type="text" #todo />
+<button (click)="add(todo.value)">add</button>
+
+<ul>
+  <li
+    *ngFor="let todo of todos | limit: 5"
+    (click)="complete(todo.id)"
+    [class.completed]="todo.completed"
+  >
+    {{ todo.content }}
+  </li>
+</ul>
+<pre>{{ todos | json }}</pre>

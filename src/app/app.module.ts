@@ -21,6 +21,8 @@ import { TextcolorDirective } from './directive/textcolor.directive';
 import { TextColorCustomDirective } from './directive/text-color-custom.directive';
 import { MgNgIfDirective } from './directive/mg-ng-if.directive';
 import { ReversePipe } from './pipe/reverse.pipe';
+import { TodoComponent } from './component/todo/todo.component';
+import { LimitPipe } from './pipe/limit.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { ReversePipe } from './pipe/reverse.pipe';
     TextColorCustomDirective,
     MgNgIfDirective,
     ReversePipe,
+    TodoComponent,
+    LimitPipe,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],
