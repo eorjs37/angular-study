@@ -41,6 +41,10 @@ export class AppComponent {
   ];
   active = false;
 
+  //status, prop
+  status = false;
+  prop = 'Hello';
+
   @ViewChildren(Child2Component) myChildren:
     | QueryList<Child2Component>
     | undefined;

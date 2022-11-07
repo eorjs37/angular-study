@@ -24,6 +24,7 @@ import { ReversePipe } from './pipe/reverse.pipe';
 import { TodoComponent } from './component/todo/todo.component';
 import { LimitPipe } from './pipe/limit.pipe';
 import { ParentComponent } from './component/parent/parent.component';
+import { ChildrenComponent } from './component/children/children.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ParentComponent } from './component/parent/parent.component';
     TodoComponent,
     LimitPipe,
     ParentComponent,
+    ChildrenComponent,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],

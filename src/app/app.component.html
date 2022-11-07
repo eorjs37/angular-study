@@ -1,5 +1,13 @@
 <div class="container">
   <div class="row">
+    <button (click)="status = !status">
+      {{ status ? "Destory Child" : "Create Child" }}
+    </button>
+  </div>
+
+  <app-children *ngIf="status" [prop]="prop"></app-children>
+
+  <div class="row">
     <div class="form-inline">
       <div class="form-group margin">
         <label for="name">Name:</label>
