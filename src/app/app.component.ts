@@ -2,6 +2,7 @@ import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { User } from './models/user.model';
 import { ChildComponent } from './component/child/child.component';
 import { Child2Component } from './component/child2/child2.component';
+import { GreetingService } from './service/greeting.service';
 export interface Checkbox {
   id: number;
   label: string;
@@ -45,11 +46,15 @@ export class AppComponent {
   status = false;
   prop = 'Hello';
 
+  //greeting service
+  greeting: string | undefined;
+  greetingService: GreetingService | undefined;
+
   @ViewChildren(Child2Component) myChildren:
     | QueryList<Child2Component>
     | undefined;
 
-  constructor() {
+  constructor(private greetiingService: GreetingService) {
     this.users = [
       new User(1, 'Lee', 'Administrator'),
       new User(2, 'Baek', 'Developer'),
@@ -101,5 +106,9 @@ export class AppComponent {
     if (this.myChild != undefined) {
       this.myChild.contextText = 'hello world';
     }
+  }
+
+  sayHi() {
+    this.greeting = this.greetiingService.sayHi();
   }
 }
