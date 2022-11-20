@@ -3,6 +3,8 @@ import { User } from './models/user.model';
 import { ChildComponent } from './component/child/child.component';
 import { Child2Component } from './component/child2/child2.component';
 import { GreetingService } from './service/greeting.service';
+import { Greeting2Service } from './service/greeting2.service';
+import { Greeting3Service } from './service/greeting3.service';
 export interface Checkbox {
   id: number;
   label: string;
@@ -13,6 +15,7 @@ export interface Checkbox {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [Greeting3Service],
 })
 export class AppComponent {
   @ViewChild(ChildComponent) myChild: ChildComponent | undefined;
@@ -49,17 +52,23 @@ export class AppComponent {
   //greeting service
   greeting: string | undefined;
   greetingService: GreetingService | undefined;
+  greeting2: string | undefined;
 
   @ViewChildren(Child2Component) myChildren:
     | QueryList<Child2Component>
     | undefined;
 
-  constructor(private greetiingService: GreetingService) {
+  constructor(
+    private greetiingService: GreetingService,
+    private greetingService2: Greeting2Service
+  ) {
     this.users = [
       new User(1, 'Lee', 'Administrator'),
       new User(2, 'Baek', 'Developer'),
       new User(3, 'Park', 'Designer'),
     ];
+
+    this.greeting2 = this.greetingService2.sayHi();
   }
 
   setTitle(title: string) {
