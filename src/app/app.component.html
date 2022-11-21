@@ -107,5 +107,11 @@
 
   <app-todo></app-todo>
 
+  <h1>Form</h1>
+
+  <input type="text" (keyup.enter)="checkValue($event.target)" />
+
+  <em>{{ checkResult }}</em>
+
   <router-outlet></router-outlet>
 </div>

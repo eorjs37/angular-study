@@ -54,6 +54,8 @@ export class AppComponent {
   greetingService: GreetingService | undefined;
   greeting2: string | undefined;
 
+  checkResult: string | undefined;
+
   @ViewChildren(Child2Component) myChildren:
     | QueryList<Child2Component>
     | undefined;
@@ -73,6 +75,12 @@ export class AppComponent {
 
   setTitle(title: string) {
     this.title = title;
+  }
+
+  checkValue(val: any) {
+    console.log(typeof val);
+
+    this.checkResult = val.value.length > 3 ? '' : '4자 이상 입력하세요';
   }
 
   //사용자 추가
