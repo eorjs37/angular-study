@@ -25,6 +25,7 @@ import { TodoComponent } from './component/todo/todo.component';
 import { LimitPipe } from './pipe/limit.pipe';
 import { ParentComponent } from './component/parent/parent.component';
 import { ChildrenComponent } from './component/children/children.component';
+import { UserFormComponent } from './component/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ChildrenComponent } from './component/children/children.component';
     LimitPipe,
     ParentComponent,
     ChildrenComponent,
+    UserFormComponent,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],
