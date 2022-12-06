@@ -1,5 +1,5 @@
 <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
-  <input type="text" name="userid" placeholder="userid" />
-  <input type="password" name="password" id="password" placeholder="password" />
+  <input type="text" name="userid" placeholder="userid" ngModel />
+  <input type="password" name="password" placeholder="password" ngModel />
   <button>submit</button>
 </form>
