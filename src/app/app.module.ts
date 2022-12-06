@@ -26,6 +26,8 @@ import { LimitPipe } from './pipe/limit.pipe';
 import { ParentComponent } from './component/parent/parent.component';
 import { ChildrenComponent } from './component/children/children.component';
 import { UserFormComponent } from './component/user-form/user-form.component';
+import { UserForm2Component } from './component/user-form2/user-form2.component';
+import { FormValidateComponent } from './component/form-validate/form-validate.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { UserFormComponent } from './component/user-form/user-form.component';
     ParentComponent,
     ChildrenComponent,
     UserFormComponent,
+    UserForm2Component,
+    FormValidateComponent,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],

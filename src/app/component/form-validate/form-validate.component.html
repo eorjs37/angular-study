@@ -1,0 +1,14 @@
+<input
+  type="text"
+  name="title"
+  ngModel
+  #title="ngModel"
+  pattern="[a-zA_Z0-9]{4,10}"
+  required
+/>
+
+<p>errors : {{ title.errors | json }}</p>
+<p>invalid : {{ title.invalid }}</p>
+<p>dirty : {{ title.dirty }}</p>
+<p>touched : {{ title.touched }}</p>
+<p>pristine : {{ title.pristine }}</p>
