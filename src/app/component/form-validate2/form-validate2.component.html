@@ -1,0 +1,12 @@
+<h2>Template-driven forms Exam</h2>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+  <div class="form-group">
+    <label for="userid">User Id</label>
+    <input
+      type="text"
+      name="userid"
+      class="form-control"
+      [(ngModel)]="user['userid']"
+    />
+  </div>
+</form>

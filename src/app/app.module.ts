@@ -28,6 +28,7 @@ import { ChildrenComponent } from './component/children/children.component';
 import { UserFormComponent } from './component/user-form/user-form.component';
 import { UserForm2Component } from './component/user-form2/user-form2.component';
 import { FormValidateComponent } from './component/form-validate/form-validate.component';
+import { FormValidate2Component } from './component/form-validate2/form-validate2.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { FormValidateComponent } from './component/form-validate/form-validate.c
     UserFormComponent,
     UserForm2Component,
     FormValidateComponent,
+    FormValidate2Component,
   ],
   imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
   providers: [],
