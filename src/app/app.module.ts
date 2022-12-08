@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,8 @@ import { UserFormComponent } from './component/user-form/user-form.component';
 import { UserForm2Component } from './component/user-form2/user-form2.component';
 import { FormValidateComponent } from './component/form-validate/form-validate.component';
 import { FormValidate2Component } from './component/form-validate2/form-validate2.component';
+import { FormValidate3Component } from './component/form-validate3/form-validate3.component';
+import { FormValidate4Component } from './component/form-validate4/form-validate4.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +60,16 @@ import { FormValidate2Component } from './component/form-validate2/form-validate
     UserForm2Component,
     FormValidateComponent,
     FormValidate2Component,
+    FormValidate3Component,
+    FormValidate4Component,
   ],
-  imports: [FormsModule, CommonModule, BrowserModule, AppRoutingModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
