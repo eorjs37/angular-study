@@ -1,0 +1,9 @@
+<form [formGroup]="userForm" novalidate>
+  <div formArrayName="hobbies">
+    <div *ngFor="let hobby of hoobies.controls; let i = index">
+      <input type="text" [formControlName]="i" />
+    </div>
+  </div>
+</form>
+
+<hr />

@@ -31,6 +31,9 @@ import { FormValidateComponent } from './component/form-validate/form-validate.c
 import { FormValidate2Component } from './component/form-validate2/form-validate2.component';
 import { FormValidate3Component } from './component/form-validate3/form-validate3.component';
 import { FormValidate4Component } from './component/form-validate4/form-validate4.component';
+import { FormArrayComponent } from './component/form-array/form-array.component';
+import { FormValidate5Component } from './component/form-validate5/form-validate5.component';
+import { FormCustomValidatorComponent } from './component/form-custom-validator/form-custom-validator.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { FormValidate4Component } from './component/form-validate4/form-validate
     FormValidate2Component,
     FormValidate3Component,
     FormValidate4Component,
+    FormArrayComponent,
+    FormValidate5Component,
+    FormCustomValidatorComponent,
   ],
   imports: [
     FormsModule,

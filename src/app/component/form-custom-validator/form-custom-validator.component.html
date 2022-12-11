@@ -1,0 +1,31 @@
+<form [formGroup]="userForm2" novalidate>
+  <div>
+    <input type="text" formControlName="userid" placeholder="user id" />
+  </div>
+  <div formGroupName="passwordGroup">
+    <div>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="password"
+      />
+    </div>
+    <div>
+      <input
+        type="password"
+        formControlName="confirmPassword"
+        placeholder="confirmPassword"
+      />
+    </div>
+  </div>
+</form>
+<pre>
+    {{ userForm2.value | json }}
+</pre>
+<pre>
+    {{ userForm2.status }}
+</pre>
+<pre>
+    {{ userForm2.controls['passwordGroup'].errors?.['match'] | json }}
+</pre>
+<hr />
